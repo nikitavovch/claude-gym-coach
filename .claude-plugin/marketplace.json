@@ -1,0 +1,41 @@
+{
+  "name": "claude-gym-coach",
+  "owner": {
+    "name": "Nikita Vovchenko",
+    "url": "https://github.com/nikitavovch"
+  },
+  "metadata": {
+    "description": "A personal strength coach for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "coach",
+      "source": "./",
+      "description": "A personal strength coach: designs your programme, plans each session from your own history, logs what you dictate and reviews every block — in plain markdown you own.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Nikita Vovchenko",
+        "url": "https://github.com/nikitavovch"
+      },
+      "category": "productivity",
+      "keywords": [
+        "fitness",
+        "gym",
+        "coach",
+        "personal-trainer",
+        "strength-training",
+        "powerlifting",
+        "hypertrophy",
+        "bodybuilding",
+        "workout-log",
+        "workout-tracker",
+        "training-log",
+        "workout-planner",
+        "progressive-overload",
+        "rpe",
+        "markdown"
+      ]
+    }
+  ]
+}

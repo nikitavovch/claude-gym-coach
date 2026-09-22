@@ -1,0 +1,11 @@
+# The plugin has no package dependencies — Node's standard library only —
+# so the one thing that ages is the pinned GitHub Actions.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    labels: [dependencies]
+    commit-message:
+      prefix: ci

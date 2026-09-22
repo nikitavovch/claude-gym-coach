@@ -1,0 +1,44 @@
+name: Coaching quality
+description: A programme, progression or piece of advice that looks wrong.
+labels: [coaching]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The coach is meant to be evidence-based and safe. If something it
+        wrote looks wrong for the athlete, we want to know — and a source
+        makes it much faster to fix. **Invent the athlete's details**
+        rather than pasting real ones.
+  - type: textarea
+    id: situation
+    attributes:
+      label: The athlete
+      description: Goal, training age, schedule, equipment, injuries — whatever the coach knew.
+    validations:
+      required: true
+  - type: textarea
+    id: advice
+    attributes:
+      label: What the coach wrote or said
+      description: Paste the part of program.md, the plan or the reply.
+    validations:
+      required: true
+  - type: textarea
+    id: why-wrong
+    attributes:
+      label: Why it looks wrong
+      description: What a good coach would do instead, and why.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Studies, position stands or respected texts that back your point, if you have them.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: I removed or invented every name and health detail in what I pasted.
+          required: true

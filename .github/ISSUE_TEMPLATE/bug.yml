@@ -1,0 +1,67 @@
+name: Bug
+description: A command failed, a number is wrong, or a log could not be read.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. **Please do not paste real personal data** —
+        replace names, and anything about health you would not want public,
+        with invented values that still reproduce the problem.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The command you ran (e.g. `/coach:log`) and what the coach did or said.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce it
+      description: |
+        The smallest input that shows it. A log file, the output of
+        `node "$COACH_PLUGIN_ROOT/scripts/stats.mjs" validate <file>`, or a
+        `stats.mjs` command and its output help most.
+      render: markdown
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      description: '"version" in .claude-plugin/plugin.json of your install'
+    validations:
+      required: true
+  - type: input
+    id: claude-version
+    attributes:
+      label: Claude Code version
+      description: Output of `claude --version`
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [macOS, Linux, Windows, Other]
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node version
+      description: Output of `node --version`
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: I removed or invented every name and health detail in what I pasted.
+          required: true
