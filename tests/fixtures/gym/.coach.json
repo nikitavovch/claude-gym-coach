@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "units": "kg",
+  "language": "ru",
+  "default_athlete": "danila",
+  "athletes": {
+    "danila": { "name": "Данила", "language": "ru", "days_per_week": 4, "gym": "shared", "motivation": false },
+    "vera": { "name": "Вера", "language": "ru", "days_per_week": 3, "gym": "own", "motivation": true }
+  },
+  "created": "2026-01-01"
+}

@@ -1,0 +1,18 @@
+.DS_Store
+node_modules/
+*.log
+.superpowers/
+
+# Eval run artefacts: traces, HTML reports, aggregate-result.json
+evals/results/
+
+# Worktrees made by Claude Code agents
+.claude/worktrees/
+
+# The maintainers' own material: design specs, research notes, audits and
+# the behaviour evals stay local and out of the public repository.
+docs/
+evals/
+.claude/
+tests/evals.test.mjs
+.github/workflows/evals.yml

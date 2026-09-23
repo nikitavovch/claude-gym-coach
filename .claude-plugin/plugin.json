@@ -1,0 +1,29 @@
+{
+  "name": "coach",
+  "description": "A personal strength coach: designs your programme, plans each session from your own history, logs what you dictate and reviews every block — in plain markdown you own.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Nikita Vovchenko",
+    "url": "https://github.com/nikitavovch"
+  },
+  "homepage": "https://github.com/nikitavovch/claude-gym-coach",
+  "repository": "https://github.com/nikitavovch/claude-gym-coach",
+  "license": "MIT",
+  "keywords": [
+    "fitness",
+    "gym",
+    "coach",
+    "personal-trainer",
+    "strength-training",
+    "powerlifting",
+    "hypertrophy",
+    "bodybuilding",
+    "workout-log",
+    "workout-tracker",
+    "training-log",
+    "workout-planner",
+    "progressive-overload",
+    "rpe",
+    "markdown"
+  ]
+}

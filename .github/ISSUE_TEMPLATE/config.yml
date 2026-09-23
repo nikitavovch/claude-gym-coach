@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or idea
+    url: https://github.com/nikitavovch/claude-gym-coach/discussions
+    about: How do I…, would it make sense to…, show and tell — Discussions is the place.
+  - name: Security problem or a way around the safety boundaries
+    url: https://github.com/nikitavovch/claude-gym-coach/security/advisories/new
+    about: Report it privately, please — not as a public issue.

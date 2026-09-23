@@ -1,0 +1,48 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    # The OS matrix is the point, not decoration: the plugin derives dates
+    # and its own plugin root in-process precisely so it works on Windows,
+    # and only a Windows job can hold that honest.
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node: [20, 24]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+      # No arguments: Node finds tests/*.test.mjs by itself on every
+      # platform. A quoted glob would need Node 21+, and the shell's own
+      # glob does not expand on Windows.
+      - run: node --test
+
+  manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: plugin.json and marketplace.json parse and agree on the version
+        run: |
+          node -e '
+            const fs = require("fs");
+            const plugin = JSON.parse(fs.readFileSync(".claude-plugin/plugin.json", "utf8"));
+            const market = JSON.parse(fs.readFileSync(".claude-plugin/marketplace.json", "utf8"));
+            const entry = market.plugins.find((p) => p.name === plugin.name);
+            if (!entry) throw new Error(`marketplace.json lists no plugin named ${plugin.name}`);
+            for (const [label, v] of [["marketplace metadata", market.metadata.version], ["marketplace entry", entry.version]]) {
+              if (v !== plugin.version) throw new Error(`${label} says ${v}, plugin.json says ${plugin.version}`);
+            }
+            console.log(`ok: ${plugin.name} ${plugin.version}`);
+          '
