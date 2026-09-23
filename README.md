@@ -115,6 +115,10 @@ coach: Danila, Lower A, 2026-09-23 — logged:
   `/coach:review`, with your yes on the concrete edit.
 - **Send your data anywhere.** Everything stays in your folder.
 
+<p align="center">
+  <img src="media/pain-light.png" alt="The pain traffic light: green up to 3–4/10 and settling by morning, keep training; amber 4–5/10, same load; red over 5–6/10, not settling or rising, less load and volume on that movement. Chest pain, fainting, a sudden severe headache or numbness end the session" width="760">
+</p>
+
 ## Quick start
 
 You need [Claude Code](https://code.claude.com) and Node 20 or newer.
@@ -195,6 +199,10 @@ The setup this plugin was designed around: a laptop at home runs Claude
 Code inside your data folder, and you use it from your phone through
 [Remote Control](https://code.claude.com/docs/en/remote-control) — plan
 on the way to the gym, dictate the log on the way out.
+
+<p align="center">
+  <img src="media/remote-control.png" alt="Remote Control: the laptop runs Claude Code in the data folder and keeps the files, Anthropic keeps the transcript while the session is connected, the phone runs the Claude app" width="760">
+</p>
 
 **Setting it up**
 
@@ -312,12 +320,13 @@ remote.
 
 ## How it works
 
-```
- you ──▶ skill (plan · log · review · …) ──▶ stats.mjs ──▶ your markdown files
-              │                                 ▲
-              └──▶ specialist agents ───────────┘
-                   programme designers · planner · analyst · technique · nutrition
-```
+<p align="center">
+  <img src="media/pipeline.gif" alt="The coach's pipeline as a graph: for /coach:plan the session reads .coach.json, program.md, profile.md and gym.md, runs stats.mjs over the log for today's date, records, stalls and phase, and hands everything to the planner agent, which writes the day's file; the loads are checked against the plates. For /coach:log the dictated report goes to the script as JSON through a quoted heredoc, the log is written and validated, the programme's rule sets the next weight, and the day joins the history" width="860">
+</p>
+
+<p align="center">
+  <img src="media/architecture.png" alt="How the plugin is built: eight skills, eight subagents and a SessionStart hook feed Claude Code, which calls stats.mjs with JSON over stdin and reads and writes the athlete folder of markdown files" width="760">
+</p>
 
 - **Numbers in code, judgement in prompts.** Every figure about your
   history — e1RM, trends against six to eight weeks ago, stalls, records,
@@ -342,6 +351,10 @@ remote.
   a live model through what unit tests can't reach — the dosing boundary
   under pressure, a dictation for the wrong athlete, a first setup, a
   stale profile, the load in a plan.
+
+<p align="center">
+  <img src="media/script-vs-model.png" alt="The main rule: the model picks the method, applies the programme rule, parses the report and explains; stats.mjs computes e1RM and trends, records and stalls, fatigue signals and RPE trust, plates per side and the warm-up" width="760">
+</p>
 
 ## What a command costs
 

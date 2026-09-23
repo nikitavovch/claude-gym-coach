@@ -11,6 +11,11 @@ follow [semantic versioning](https://semver.org/spec/v2.0.0.html).
 - Both READMEs open on a demo GIF in their own language: setting up with
   the coach, importing an old notebook, a session planned from it with the
   plates for each side, and a workout reported from a phone and logged.
+- "How it works" opens on an animated graph of one plan and one log: every
+  file the coach reads, every script call, and where each number comes
+  from. Both READMEs also gained figures for the plugin's layout, the
+  script-counts-the-model-decides rule, Remote Control and the pain
+  traffic light, each in the README's language.
 
 ## [1.0.0] — 2026-09-23
 
