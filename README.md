@@ -13,6 +13,10 @@ every block, and keeps all of it as plain markdown files in a folder you
 own. Drive it from the terminal — or from your phone, walking out of the
 gym.
 
+<p align="center">
+  <img src="media/demo.gif" alt="claude-gym-coach demo: the athlete tells the coach who they are and gets a programme, imports an old notebook, gets today's session planned from it with the plates for each side, and reports the workout from a phone for the coach to log" width="860">
+</p>
+
 [Русская версия](README.ru.md)
 
 An exchange looks like this:

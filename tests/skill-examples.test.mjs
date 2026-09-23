@@ -327,6 +327,21 @@ test("the READMEs quote the nutrition specialist's own supplement doses", () => 
   assert.match(read('README.ru.md'), /креатин 3–5 г в день, кофеин\s+3–6 мг\/кг/);
 });
 
+// Each README opens on a demo in its own language. An image a README shows
+// but the repository lacks renders on GitHub as a broken icon, and nothing
+// else warns about it: a GIF left uncommitted fails here, in CI.
+test('each README shows its own demo, and every image it shows is in the repository', () => {
+  const ROOT = fileURLToPath(new URL('../', import.meta.url));
+  for (const [readme, demo] of [['README.md', 'media/demo.gif'], ['README.ru.md', 'media/demo-ru.gif']]) {
+    const text = readFileSync(join(ROOT, readme), 'utf8');
+    assert.ok(text.includes(`<img src="${demo}"`), `${readme} does not show ${demo}`);
+    for (const [, src] of text.matchAll(/<img\s[^>]*?src="([^"]+)"/g)) {
+      if (/^https?:/.test(src)) continue;
+      assert.ok(existsSync(join(ROOT, src)), `${readme} shows ${src}, which is not in the repository`);
+    }
+  }
+});
+
 // Duration and feel change no record and no load, so a session is never
 // held back for them: on the commonest path — sets dictated, nothing else —
 // asking first meant nothing was written until the athlete answered a

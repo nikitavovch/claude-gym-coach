@@ -6,6 +6,12 @@ follow [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Both READMEs open on a demo GIF in their own language: setting up with
+  the coach, importing an old notebook, a session planned from it with the
+  plates for each side, and a workout reported from a phone and logged.
+
 ## [1.0.0] — 2026-09-23
 
 The first public release. Before it, two audits and six independent
